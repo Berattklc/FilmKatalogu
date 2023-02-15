@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragment_liste">
+
+    <fragment
+        android:id="@+id/fragment_liste"
+        android:name="com.beratklc.filmkatalogu.fragment_liste"
+        android:label="fragment_liste"
+        tools:layout="@layout/fragment_liste" >
+        <action
+            android:id="@+id/action_fragment_liste_to_fragment_film_olustur"
+            app:destination="@id/fragment_film_olustur" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_film_olustur"
+        android:name="com.beratklc.filmkatalogu.fragment_film_olustur"
+        android:label="fragment_film_olustur"
+        tools:layout="@layout/fragment_film_olustur" >
+        <action
+            android:id="@+id/action_fragment_film_olustur_to_fragment_liste"
+            app:destination="@id/fragment_liste" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
